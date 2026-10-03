@@ -3,47 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Tech Automation | Accueil 🇧🇪</title>
+    <title>Amir Tech Automation | Accueil</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: #060913; color: #f3f4f6; line-height: 1.6; background-image: radial-gradient(circle at 50% 20%, #1e293b 0%, #060913 60%); }
-        nav { background: rgba(11, 15, 25, 0.7); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; left: 0; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; }
+        nav { background: rgba(11, 15, 25, 0.8); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; left: 0; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
         .logo { font-size: 22px; font-weight: 800; color: #ffffff; text-decoration: none; }
         .logo span { color: #3b82f6; }
         .nav-links { display: flex; gap: 25px; list-style: none; }
-        .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 600; }
-        .nav-links a:hover { color: #3b82f6; }
-        #accueil { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 180px 5% 80px 5%; max-width: 800px; margin: 0 auto; }
-        .badge { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 25px; text-transform: uppercase; }
-        h1 { font-size: 48px; color: #fff; font-weight: 800; margin-bottom: 20px; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #3b82f6; }
+        .container { max-width: 1000px; margin: 150px auto 60px auto; padding: 0 20px; text-align: center; }
+        .badge { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 25px; display: inline-block; }
+        h1 { font-size: 46px; font-weight: 800; margin-bottom: 20px; color: #fff; }
         h1 span { color: #3b82f6; }
-        p { color: #9ca3af; font-size: 19px; margin-bottom: 35px; }
-        .cta-main { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: #fff; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4); }
+        p { color: #9ca3af; font-size: 18px; max-width: 750px; margin: 0 auto 40px auto; }
+        .btn { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #fff; text-decoration: none; padding: 16px 40px; border-radius: 50px; font-weight: 700; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4); display: inline-block; transition: 0.3s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 80px; }
+        .stat-card { background: rgba(17, 24, 39, 0.5); border: 1px solid rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 16px; }
+        .stat-card h3 { font-size: 36px; color: #10b981; margin-bottom: 5px; }
+        .stat-card p { font-size: 14px; color: #9ca3af; margin: 0; }
     </style>
 </head>
 <body>
-
     <nav>
         <a href="index.html" class="logo">Amir<span>Tech</span></a>
         <ul class="nav-links">
-            <li><a href="index.html" style="color: #3b82f6;">Accueil</a></li>
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="code.html">Notre Code</a></li>
+            <li><a href="ethique.html">Éthique</a></li>
             <li><a href="tarifs.html">Tarifs & Commande</a></li>
         </ul>
     </nav>
-
-    <section id="accueil">
-        <span class="badge">🇧🇪 Code informatique éthique & performant</span>
-        <h1>Solutions Data & <span>Python</span></h1>
-        <p>Je développe des scripts automatisés puissants pour extraire vos données cibles et éliminer vos tâches administratives laborieuses.</p>
-        <!-- C'est ce bouton qui ouvre la deuxième page ! -->
-        <a href="tarifs.html" class="cta-main">Voir les Tarifs Réels</a>
-    </section>
-
+    <div class="container">
+        <span class="badge">🇧🇪 Intelligence de Données & Scripts Avancés</span>
+        <h1>L'Automatisation au Service des <span>Entreprises</span></h1>
+        <p>Gagnez des heures précieuses. Vos tâches répétitives sur le web et sur Excel exécutées instantanément grâce à des scripts de pointe codés de A à Z.</p>
+        <a href="services.html" class="btn">Explorer l'Agence</a>
+        <div class="stats-grid">
+            <div class="stat-card"><h3>100%</h3><p>Données Légales & Publiques</p></div>
+            <div class="stat-card"><h3>0 ms</h3><p>Temps Perdu en Saisie Manuelle</p></div>
+            <div class="stat-card"><h3>80€</h3><p>Premier Pack Premium Professionnel</p></div>
+        </div>
+    </div>
 </body>
 </html>
-
-    
-   
 
 
      
