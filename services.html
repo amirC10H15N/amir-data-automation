@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Services - Amir Tech</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #060913; color: #f3f4f6; padding: 40px 20px; background-image: radial-gradient(circle at 50% 20%, #1e293b 0%, #060913 60%); }
+        nav { background: rgba(11, 15, 25, 0.8); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; left: 0; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .logo { font-size: 22px; font-weight: 800; color: #ffffff; text-decoration: none; }
+        .logo span { color: #3b82f6; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: #3b82f6; }
+        .container { max-width: 900px; margin: 120px auto 0 auto; }
+        h1 { font-size: 36px; margin-bottom: 30px; text-align: center; color: #fff; }
+        h1 span { color: #3b82f6; }
+        .service-block { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 16px; padding: 30px; margin-bottom: 30px; }
+        .service-block h2 { color: #fff; margin-bottom: 15px; font-size: 22px; }
+        .service-block p { color: #9ca3af; font-size: 15px; margin-bottom: 15px; }
+        .service-block ul { list-style-position: inside; color: #60a5fa; font-size: 14px; }
+        .service-block ul li { margin-bottom: 5px; }
+        .btn-next { display: block; text-align: center; margin: 40px auto; background: #1f2937; color: white; padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; max-width: 250px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Amir<span>Tech</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="code.html">Notre Code</a></li>
+            <li><a href="ethique.html">Éthique</a></li>
+            <li><a href="tarifs.html">Tarifs & Commande</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Nos Services <span>Détaillés</span></h1>
+        
+        <div class="service-block">
+            <h2>🕸️ Web Scraping B2B de Précision</h2>
+            <p>Notre agence conçoit des robots capables de naviguer de manière autonome sur les annuaires d'entreprises professionnels et sur les plateformes géographiques. Nous extrayons la donnée brute publique pour la restructurer proprement.</p>
+            <ul>
+                <li>Extraction de fiches de contacts qualifiées (Téléphones, Adresses)</li>
+                <li>Génération de fichiers de prospection ciblés pour la Belgique</li>
+                <li>Respect strict de la structure d'origine des données</li>
+            </ul>
+        </div>
+
+        <div class="service-block">
+            <h2>📊 Ingénierie & Automatisation Excel</h2>
+            <p>Les fichiers Excel corrompus, mal nettoyés ou désorganisés font perdre des journées entières à vos équipes. Grâce à l'intégration de la bibliothèque de calcul avancée Pandas, nous créons des filtres automatisés intelligents.</p>
+            <ul>
+                <li>Suppression automatique des doublons en moins d'une seconde</li>
+                <li>Fusion et croisement de plusieurs fichiers complexes</li>
+                <li>Calcul automatisé de chiffres d'affaires et de bilans comptables</li>
+            </ul>
+        </div>
+
+        <a href="code.html" class="btn-next">Étape Suivante : Voir le Code ➔</a>
+    </div>
+</body>
+</html>
