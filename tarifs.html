@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Tarifs - Amir Tech 🇧🇪</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #060913; color: #f3f4f6; padding: 40px 20px; background-image: radial-gradient(circle at 50% 20%, #1e293b 0%, #060913 60%); }
+        nav { background: rgba(11, 15, 25, 0.8); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; left: 0; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 22px; font-weight: 800; color: #ffffff; text-decoration: none; }
+        .logo span { color: #3b82f6; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .container { max-width: 900px; margin: 100px auto 0 auto; text-align: center; }
+        h1 { font-size: 36px; margin-bottom: 40px; color: #fff; }
+        h1 span { color: #3b82f6; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 35px; margin-top: 20px; }
+        .price-card { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; padding: 40px 30px; transition: 0.3s; }
+        .price-card.featured { border-color: #3b82f6; box-shadow: 0 0 30px rgba(59, 130, 246, 0.15); }
+        .price-title { font-size: 19px; color: #fff; font-weight: 700; margin-bottom: 15px; }
+        .price-amount { font-size: 42px; font-weight: 800; color: #10b981; margin-bottom: 25px; }
+        .price-features { list-style: none; text-align: left; margin-bottom: 35px; font-size: 14px; color: #9ca3af; padding-left: 10px; }
+        .price-features li { margin-bottom: 12px; }
+        .price-features li::before { content: "✦ "; color: #3b82f6; }
+        .btn-price { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #fff; text-decoration: none; padding: 14px; border-radius: 12px; display: block; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Amir<span>Tech</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="tarifs.html" style="color: #3b82f6;">Tarifs & Commande</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Choisissez votre <span>Solution</span></h1>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-title">Listing Excel Prêt à l'Emploi</div>
+                <div class="price-amount">80 €</div>
+                <ul class="price-features">
+                    <li>Plus de 500 contacts professionnels triés</li>
+                    <li>Noms, Secteurs, Communes & Téléphones</li>
+                    <li>Format Excel (.xlsx) propre</li>
+                </ul>
+                <a href="mailto:amirgabardi@://icloud.com Fichier Excel" class="btn-price">Acheter le fichier</a>
+            </div>
+            <div class="price-card featured">
+                <div class="price-title">Script Python de Scraping</div>
+                <div class="price-amount">120 €</div>
+                <ul class="price-features">
+                    <li>Code Python (.py) écrit sur mesure</li>
+                    <li>Extraction de la plateforme de votre choix</li>
+                    <li>Instructions d'utilisation simples</li>
+                </ul>
+                <a href="mailto:amirgabardi@://icloud.com de Script" class="btn-price">Commander le script</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
