@@ -3,23 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amir Tech | Automatisation B2B 🇧🇪</title>
+    <title>Amir Tech Automation | Data & Scripts Python 🇧🇪</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: #090d16; color: #f3f4f6; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .card { max-width: 600px; width: 100%; background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 40px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); text-align: center; }
-        h1 { font-size: 28px; margin-bottom: 15px; color: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, sans-serif; scroll-behavior: smooth; }
+        body { background-color: #0b0f19; color: #f3f4f6; line-height: 1.6; }
+        
+        /* 1. NAVIGATION */
+        nav { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid #1f2937; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 20px; font-weight: 700; color: #ffffff; text-decoration: none; }
+        .logo span { color: #3b82f6; }
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.2s; }
+        .nav-links a:hover { color: #3b82f6; }
+
+        /* MULTI-SECTIONS WRAPPER */
+        section { padding: 100px 5% 60px 5%; max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 28px; margin-bottom: 40px; color: #fff; }
+        .section-title span { color: #3b82f6; }
+
+        /* 2. ACCUEIL (HERO) */
+        #accueil { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 150px; padding-bottom: 60px; }
+        .badge { background: rgba(59, 130, 246, 0.1); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+        h1 { font-size: 42px; color: #fff; font-weight: 800; margin-bottom: 15px; letter-spacing: -1px; }
         h1 span { color: #3b82f6; }
-        p { color: #9ca3af; font-size: 16px; line-height: 1.6; margin-bottom: 25px; }
-        .btn { background: #3b82f6; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: bold; display: inline-block; width: 100%; transition: 0.2s; }
-        .btn:hover { background: #2563eb; }
+        .hero-p { color: #9ca3af; font-size: 18px; max-width: 700px; margin-bottom: 30px; }
+        .cta-main { background: #3b82f6; color: #fff; text-decoration: none; padding: 14px 35px; border-radius: 8px; font-weight: 600; box-shadow: 0 4px 14 rgba(59, 130, 246, 0.4); transition: 0.2s; }
+        .cta-main:hover { background: #2563eb; transform: translateY(-2px); }
+
+        /* 3. SERVICES (GRILLE) */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 25px; transition: 0.2s; }
+        .card:hover { border-color: #3b82f6; transform: translateY(-3px); }
+        .card h3 { color: #fff; margin-bottom: 10px; font-size: 18px; }
+        .card p { color: #9ca3af; font-size: 14px; }
+
+        /* 4. TARIFS */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 800px; margin: 0 auto; }
+        .price-card { background: #111827; border: 1px solid #1f2937; border-radius: 16px; padding: 35px; text-align: center; position: relative; }
+        .price-card.featured { border-color: #3b82f6; box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15); }
+        .price-title { font-size: 18px; color: #fff; margin-bottom: 10px; }
+        .price-amount { font-size: 36px; font-weight: bold; color: #10b981; margin-bottom: 20px; }
+        .price-features { list-style: none; text-align: left; margin-bottom: 30px; font-size: 14px; color: #9ca3af; }
+        .price-features li { margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .price-features li::before { content: "✓"; color: #10b981; font-weight: bold; }
+        .btn-price { background: #1f2937; border: 1px solid #374151; color: #fff; text-decoration: none; padding: 12px; border-radius: 8px; display: block; font-weight: 600; font-size: 14px; transition: 0.2s; }
+        .price-card.featured .btn-price { background: #3b82f6; border: none; }
+        .price-card.featured .btn-price:hover { background: #2563eb; }
+
+        /* 5. FAQ */
+        .faq-box { max-width: 700px; margin: 0 auto; background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 25px; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #1f2937; padding-bottom: 15px; }
+        .faq-item:last-child { margin-bottom: 0; border-bottom: none; padding-bottom: 0; }
+        .faq-item h4 { color: #fff; margin-bottom: 5px; font-size: 15px; }
+        .faq-item p { color: #9ca3af; font-size: 14px; }
+
+        /* 6. FOOTER */
+        footer { background: #090d16; border-top: 1px solid #1f2937; text-align: center; padding: 30px; color: #4b5563; font-size: 13px; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Amir Tech <span>Automation</span></h1>
-        <p>Je crée de nouveaux scripts de A à Z pour extraire des données et faire gagner du temps aux entreprises en Belgique.</p>
-        <a href="amirgabardi@icloud.com de script" class="btn">Me contacter par Email</a>
-    </div>
+
+    <!-- 1. NAVIGATION -->
+    <nav>
+        <a href="#" class="logo">Amir<span>Tech</span></a>
+        <ul class="nav-links">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <!-- 2. ACCUEIL (HERO) -->
+    <section id="accueil">
+        <span class="badge">🇧🇪 Agence d'Automatisation Informatique Éthique</span>
+        <h1>Solutions Data & <span>Python</span></h1>
+        <p class="hero-p">Je code des scripts automatisés sur mesure pour extraire des informations cibles et éliminer vos tâches administratives ou fichiers Excel laborieux.</p>
+        <a href="#tarifs" class="cta-main">Découvrir les offres</a>
+    </section>
+
+    <!-- 3. SERVICES -->
+    <section id="services">
+        <h2 class="section-title">Mes <span>Services</span></h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🕸️ Web Scraping B2B</h3>
+                <p>Extraction automatique de données publiques (Annuaires, Google Maps, sites web). Je compile des listings clients propres (Noms, Téléphones, Villes) au format Excel.</p>
+            </div>
+            <div class="card">
+                <h3>📊 Automatisation Excel</h3>
+                <p>Tri automatique, suppression des doublons, fusion de plusieurs fichiers complexes et création de rapports de calcul sans aucune action manuelle de votre part.</p>
+            </div>
+            <div class="card">
+                <h3>⚙️ Scripts Python Répétitifs</h3>
+                <p>Création de scripts légers et rapides pour automatiser le renommage de fichiers, le téléchargement automatique de documents ou la structuration de données brutes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TARIFS -->
+    <section id="tarifs">
+        <h2 class="section-title">Offres & <span>Tarifs</span></h2>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-title">Listing Excel Prêt à l'Emploi</div>
+                <div class="price-amount">50 €</div>
+                <ul class="price-features">
+                    <li>Plus de 100 contacts professionnels triés</li>
+                    <li>Noms, Secteurs, Communes & Téléphones</li>
+                    <li>Données 100% publiques et légales</li>
+                    <li>Format Excel (.xlsx) ou CSV</li>
+                </ul>
+                <a href="mailto:amirgabardi@://icloud.com Fichier Excel Électriciens" class="btn-price">Acheter le fichier</a>
+            </div>
+            <div class="price-card featured">
+                <div class="price-title">Script Python sur Mesure</div>
+                <div class="price-amount">150 €</div>
+                <ul class="price-features">
+                    <li>Code Python (.py) écrit de A à Z</li>
+                    <li>Extraction de la plateforme de votre choix</li>
+                    <li>Nettoyage de données via Pandas</li>
+                    <li>Instructions d'exécution fournies</li>
+                </ul>
+                <a href="mailto:amirgabardi@://icloud.com de Script Python sur Mesure" class="btn-price">Commander un script</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FAQ -->
+    <section id="faq">
+        <h2 class="section-title">Questions <span>Fréquentes</span></h2>
+        <div class="faq-box">
+            <div class="faq-item">
+                <h4>Vos bases de données sont-elles légales ?</h4>
+                <p>Oui. Les scripts extraient uniquement des données publiques partagées volontairement par les professionnels sur des annuaires légaux. Aucun piratage ni donnée privée n'est impliqué.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Comment se passe le paiement ?</h4>
+                <p>Le paiement est totalement sécurisé, géré de manière éthique et fixe via virement bancaire ou l'application belge Payconiq avec l'encadrement de mes parents.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Puis-je demander un échantillon gratuit ?</h4>
+                <p>Absolument. Contactez-moi par e-mail pour recevoir gratuitement un aperçu de 3 lignes du fichier Excel pour tester la qualité avant achat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer>
+        <p>© 2026 AmirTech. Développeur Python Junior indépendant en Belgique.</p>
+        <p style="margin-top: 5px; font-size: 11px; color: #374151;">Prestataire technique éthique - Aucun modèle spéculatif ni d'intérêt bancaire.</p>
+    </footer>
+
 </body>
 </html>
