@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Architecture Code - Amir Tech</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #060913; color: #f3f4f6; padding: 40px 20px; background-image: radial-gradient(circle at 50% 20%, #1e293b 0%, #060913 60%); }
+        nav { background: rgba(11, 15, 25, 0.8); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; left: 0; border-bottom: 1px solid rgba(59, 130, 246, 0.2); padding: 18px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; }
+        .logo { font-size: 22px; font-weight: 800; color: #ffffff; text-decoration: none; }
+        .logo span { color: #3b82f6; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links a { color: #9ca3af; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .nav-links a:hover, .nav-links a.active { color: #3b82f6; }
+        .container { max-width: 900px; margin: 120px auto 0 auto; }
+        h1 { font-size: 36px; margin-bottom: 20px; text-align: center; color: #fff; }
+        h1 span { color: #3b82f6; }
+        .explain { color: #9ca3af; text-align: center; margin-bottom: 40px; }
+        .console { background: #0c101f; border: 1px solid #1e293b; border-radius: 12px; padding: 25px; font-family: 'Courier New', Courier, monospace; overflow-x: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .console-header { display: flex; gap: 6px; margin-bottom: 15px; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-r { background: #ef4444; }
+        .dot-y { background: #f59e0b; }
+        .dot-g { background: #10b981; }
+        pre { color: #34d399; font-size: 13.5px; }
+        .comment { color: #4b5563; }
+        .keyword { color: #f472b6; }
+        .btn-next { display: block; text-align: center; margin: 40px auto; background: #3b82f6; color: white; padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; max-width: 250px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Amir<span>Tech</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="code.html" class="active">Notre Code</a></li>
+            <li><a href="ethique.html">Éthique</a></li>
+            <li><a href="tarifs.html">Tarifs & Commande</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Transparence de <span>L'Architecture</span></h1>
+        <p class="explain">Nous croyons en une clarté totale. Voici l'ingénierie exacte de nos scripts Python d'extraction de données publiques.</p>
+        
+        <div class="console">
+            <div class="console-header">
+                <div class="dot dot-r"></div><div class="dot dot-y"></div><div class="dot dot-g"></div>
+            </div>
+            <pre>
+<span class="keyword">import</span> requests
+<span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup
+<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
+
+<span class="comment"># 🛠️ Configuration du moteur d'extraction éthique</span>
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+
+<span class="keyword">def</span> extract_public_data(url):
+    print(<span class="keyword">"🔄 Connexion aux serveurs légaux en cours..."</span>)
+    reponse = requests.get(url, headers=headers)
+    
+    <span class="keyword">if</span> reponse.status_code == 200:
+        soup = BeautifulSoup(reponse.text, 'html.parser')
+        <span class="comment"># Analyse de la structure HTML et stockage sécurisé</span>
+        print(<span class="keyword">"✅ Fichier structuré généré avec succès dans la base."</span>)
+    <span class="keyword">else</span>:
+        print(<span class="keyword">"❌ Connexion impossible"</span>)
+            </pre>
+        </div>
+        <a href="ethique.html" class="btn-next">Étape Suivante : Notre Éthique ➔</a>
+    </div>
+</body>
+</html>
